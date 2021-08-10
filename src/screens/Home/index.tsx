@@ -61,6 +61,7 @@ export function Home() {
       setTopGames(response.data.data);
       setIsLoadingTopGames(false);
     } catch (error) {
+      console.log(error)
       Alert.alert('Erro Top Games', 'Ocorreu um erro ao buscar os jogos mais assistidos agora na Twitch');
     }
   }
