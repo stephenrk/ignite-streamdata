@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Alert } from 'react-native';
 import { Linking, TouchableOpacity, Image } from 'react-native';
-// import SkeletonContent from 'react-native-skeleton-content';
+
 import {
   Fade,
   Placeholder,
@@ -48,33 +48,33 @@ export function TopGamesCard({ url, name, isLoadingTopGames }: TopGamesCardProps
     //     { key: 'banner', width: 150, height: 200, borderRadius: 10, marginRight: 16 },
     //   ]}
     // >
-    isLoading ? (
-      <Placeholder
-        Animation={Fade}
-        style={{
-          width: 150,
-          height: 200,        
-          marginRight: 16,
-          opacity: 0.2
-        }}
-      >
-        <PlaceholderMedia
-          color="#828282"
-          style={{ 
-            flex: 1, 
-            width: '100%', 
-            borderRadius: 10 
+      isLoading ? (
+        <Placeholder
+          Animation={Fade}
+          style={{
+            width: 150,
+            height: 200,        
+            marginRight: 16,
+            opacity: 0.2
           }}
-        />
-      </Placeholder>
-    ) : (
-      <TouchableOpacity activeOpacity={0.5} onPress={() => Linking.openURL(`https://www.twitch.tv/directory/game/${encodeURI(name)}`)}>
-        <Container 
-          source={{ uri: url && url.replace('{width}x{height}', '450x600') }}
-          resizeMode="cover"
-        />
-      </TouchableOpacity>
-    )
-    // </SkeletonContent>
+        >
+          <PlaceholderMedia
+            color="#828282"
+            style={{ 
+              flex: 1, 
+              width: '100%', 
+              borderRadius: 10 
+            }}
+          />
+        </Placeholder>
+      ) : (
+        <TouchableOpacity activeOpacity={0.5} onPress={() => Linking.openURL(`https://www.twitch.tv/directory/game/${encodeURI(name)}`)}>
+          <Container 
+            source={{ uri: url && url.replace('{width}x{height}', '450x600') }}
+            resizeMode="cover"
+          />
+        </TouchableOpacity>
+      )
+    ///* </SkeletonContent> */}
   );
 }

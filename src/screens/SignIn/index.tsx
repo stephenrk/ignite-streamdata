@@ -73,7 +73,7 @@ export function SignIn() {
           <SignInButton onPress={handleSignIn}>
             <SignInButtonIcon>
               {isLoggingIn ? (
-                <ActivityIndicator />
+                <ActivityIndicator size={20} color={theme.colors.white} />
               ) : (
                 <Fontisto name="twitch" size={24} color={theme.colors.white} />
               )}
